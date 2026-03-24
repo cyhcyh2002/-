@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W-Mo-H2O2-H2O System Species Distribution Calculation</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <span class="header-icon">🏛️</span>
+                <h1>Thermodynamic Calculation</h1>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            
+            <div class="input-panel">
+                <h2>Mo-H2O System Thermodynamic Calculation</h2>
+                
+                <div class="form-group">
+                    <label for="totalMo">Total Molybdenum (mol/L)</label>
+                    <input type="number" id="totalMo" step="0.001" value="0.10" min="0" placeholder="Enter total Mo concentration">
+                </div>
+                
+                <div class="form-group">
+                    <label for="pHStart">pH Start:</label>
+                    <input type="number" id="pHStart" step="0.1" value="0" min="0" max="14">
+                </div>
+                
+                <div class="form-group">
+                    <label for="pHEnd">pH End:</label>
+                    <input type="number" id="pHEnd" step="0.1" value="10" min="0" max="14">
+                </div>
+                
+                <div class="form-group">
+                    <label for="pHStep">pH Step:</label>
+                    <input type="number" id="pHStep" step="0.1" value="0.1" min="0.01">
+                </div>
+                
+                <div class="form-group advanced-option">
+                    <label for="maxIterations">Max Iterations:</label>
+                    <input type="number" id="maxIterations" value="1000" min="100">
+                </div>
+                
+                <div class="form-group advanced-option">
+                    <label for="tolerance">Convergence Tolerance:</label>
+                    <input type="number" id="tolerance" step="1e-10" value="1e-10" min="1e-10">
+                </div>
+                
+                <div class="button-group">
+                    <button id="calculateBtn" class="submit-btn">Submit</button>
+                    <button id="resetBtn" class="reset-btn">Reset</button>
+                </div>
+
+                <div class="reference-link">
+                    <a href="#" id="referenceLink"></a>
+                </div>
+                
+                <div id="status" class="status-message"></div>
+            </div>
+            
+            
+            <div class="chart-panel">
+                <h2>Species Distribution Diagram</h2>
+                <div class="chart-container">
+                    <canvas id="distributionChart"></canvas>
+                </div>
+                <div id="chartInfo" class="chart-info"></div>
+                
+               
+                <div class="data-table-section">
+                    <div class="table-header">
+                        <h3>Calculation Results Data Table</h3>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <span style="font-size: 12px; color: #666;">Scroll to view all data</span>
+                            <button id="exportBtn" class="export-btn">Export CSV</button>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table id="dataTable" class="data-table">
+                            <thead id="tableHead"></thead>
+                            <tbody id="tableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="calculator.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
