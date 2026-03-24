@@ -1,1 +1,1 @@
-
+A web‑based thermodynamic calculation tool for the Mo‑H₂O system that computes the distribution of ten molybdenum species (e.g., MoO4(2-), HMoO4(-), polynuclear complexes) as a function of pH using the Newton‑Raphson method. Users can set total Mo concentration, pH range, step size, and solver parameters; results are displayed in an interactive Chart.js plot and a scrollable data table, with the option to export the data as a CSV file. Simply open index(2).html in any modern browser to run the application locally.
